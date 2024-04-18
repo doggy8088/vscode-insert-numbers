@@ -2,7 +2,7 @@
   "name": "insert-numbers",
   "displayName": "Easy Insert Numbers",
   "description": "Insert sequential numbers in multi-cursor editing mode.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "preview": true,
   "publisher": "doggy8088",
   "icon": "icon.png",
@@ -33,25 +33,25 @@
         "mac": "cmd+alt+n",
         "when": "editorTextFocus && editorHasMultipleSelections"
       }
-    ]
-  },
-  "configuration": {
-    "title": "Insert Numbers",
-    "properties": {
-      "insert-numbers.start": {
-        "type": "number",
-        "default": 1,
-        "description": "The starting number for inserting numbers."
-      },
-      "insert-numbers.minimumIntegerDigits": {
-        "type": "number",
-        "default": 1,
-        "description": "The minimum number of integer digits."
-      },
-      "insert-numbers.useGrouping": {
-        "type": "boolean",
-        "default": false,
-        "description": "Whether to use grouping separators."
+    ],
+    "configuration": {
+      "title": "Easy Insert Numbers",
+      "properties": {
+        "insert-numbers.start": {
+          "type": "number",
+          "default": 1,
+          "description": "The starting number for inserting numbers."
+        },
+        "insert-numbers.minimumIntegerDigits": {
+          "type": "number",
+          "default": 1,
+          "description": "The minimum number of integer digits."
+        },
+        "insert-numbers.useGrouping": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to use grouping separators."
+        }
       }
     }
   },
