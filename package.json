@@ -1,11 +1,19 @@
 {
   "name": "insert-numbers",
-  "displayName": "Insert Numbers",
-  "description": "Insert increasing numbers in multiple selections (multi-cursor) mode.",
-  "version": "0.0.1",
+  "displayName": "Easy Insert Numbers",
+  "description": "Insert sequential numbers in multi-cursor editing mode.",
+  "version": "0.1.0",
+  "preview": true,
+  "publisher": "doggy8088",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doggy8088/vscode-insert-numbers"
+  },
   "engines": {
     "vscode": "^1.88.0"
   },
+  "license": "MIT",
   "categories": [
     "Other"
   ],
@@ -14,10 +22,38 @@
   "contributes": {
     "commands": [
       {
-        "command": "insert-numbers.helloWorld",
-        "title": "Hello World"
+        "command": "insert-numbers.insertNumbers",
+        "title": "Insert Numbers"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "insert-numbers.insertNumbers",
+        "key": "ctrl+alt+n",
+        "mac": "cmd+alt+n",
+        "when": "editorTextFocus && editorHasMultipleSelections"
       }
     ]
+  },
+  "configuration": {
+    "title": "Insert Numbers",
+    "properties": {
+      "insert-numbers.start": {
+        "type": "number",
+        "default": 1,
+        "description": "The starting number for inserting numbers."
+      },
+      "insert-numbers.minimumIntegerDigits": {
+        "type": "number",
+        "default": 1,
+        "description": "The minimum number of integer digits."
+      },
+      "insert-numbers.useGrouping": {
+        "type": "boolean",
+        "default": false,
+        "description": "Whether to use grouping separators."
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
